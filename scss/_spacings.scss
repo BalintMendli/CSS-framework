@@ -1,0 +1,20 @@
+@each $spacing in $spacings {
+  .m#{index($spacings, $spacing)-1} {
+    margin: $spacing + rem;
+  }
+
+  .p#{index($spacings, $spacing)-1} {
+    padding: $spacing + rem;
+  }
+
+  @each $prop in $props {
+    @each $dir-abbr, $dir in $dirs-map {
+      .m#{$dir-abbr}#{index($spacings, $spacing)-1} {
+        margin-#{$dir}: $spacing + rem;
+      }
+      .p#{$dir-abbr}#{index($spacings, $spacing)-1} {
+        padding-#{$dir}: $spacing + rem;
+      }
+    }
+  }
+}

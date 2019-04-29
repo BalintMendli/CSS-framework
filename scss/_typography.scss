@@ -1,0 +1,42 @@
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+p {
+  line-height: 1.88;
+  font-size: 1.125rem;
+  letter-spacing: 0.2px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.slim {
+  font-weight: 300;
+}
+
+@for $i from 1 through 4 {
+  h#{$i} {
+    font-size: nth($header-sizes, $i) + rem;
+    letter-spacing: nth($header-letter-spacings, $i) + px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  color: #4a4a4a;
+}
+
+a:hover,
+a:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
